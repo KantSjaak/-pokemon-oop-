@@ -2,13 +2,12 @@
 require "./Pokemon.php";
 require "./AttackMoveMaker+DamageMultiplierCalcualtor.php";
 require "./element.php";
-require "./attacks.php";
-
+require "./attack.php";
 
 //this starts it and makes the pokemon
-$Pokemon1 = new Pokemon("Pickachu", 60, element::$ELementelectric, 20, 1.5, $primaryattack = new attacks("Electric Punch", 50), $secondaryattack = new attacks("Pika Punch", 20),1.5, 20);
+$Pokemon1 = new Pokemon("Pickachu", 60, element::$ELementelectric, $primaryattack = new attack("Electric Punch", 50), $secondaryattack = new attack("Pika Punch", 20),1.5, 20);
 
-$Pokemon2 = new Pokemon("Charmeleon", 60, element::$ELementsolar, 10, 2, $attack1 = new attacks("Head Butt", 10), $attack1 = new attacks("Flare", 30), 2, 10);
+$Pokemon2 = new Pokemon("Charmeleon", 60, element::$ELementfire, $attack1 = new attack("Head Butt", 10), $attack1 = new attack("Flare", 30), 2, 10);
 
 
 
@@ -25,13 +24,11 @@ echo "<br>";
 
 DisplayHP($Pokemon1);
 echo "<br>". $Pokemon2->name. " attacks with ". $Pokemon2->Attacks[1]->attackname;
-$Pokemon1->hitpoints = multipliercalc($Pokemon2, $Pokemon1, 1);
+$Pokemon1->hitpoints = multipliercalc($Pokemon2, $Pokemon1, 1);k
 echo "<br>";
 DisplayHP($Pokemon1);
 echo "<br>";
 echo "<br>";
 echo "<br>";
 
-
-//print_r(Pokemon::$pokemons);
 print_r(Pokemon::getPopulation());

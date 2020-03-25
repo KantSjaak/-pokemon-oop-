@@ -9,15 +9,15 @@ class Pokemon {
     public $name;
     public $hitpoints;
     public $Attacks = array();
-    public $Elemental = array();
+    public $Elemental;
     public $dmgmultiplier;
     public $wknsmultiplier;
 
     //sets the above variables when someone calls this class
-    public function __construct($name, $hitpoints, $element, $buffpower, $debuffpower, $primaryatk, $secondaryatk, $dmgmultiplier, $wknsmultiplier){
+    public function __construct($name, $hitpoints, $element, $primaryatk, $secondaryatk, $dmgmultiplier, $wknsmultiplier){
         $this->name = $name;
         $this->hitpoints = $hitpoints;
-        $this->Elemental = array($element, $buffpower, $debuffpower);
+        $this->Elemental = $element;
         $this->Attacks = [$primaryatk, $secondaryatk];
         $this->dmgmultiplier = $dmgmultiplier;
         $this->wknsmultiplier = $wknsmultiplier;

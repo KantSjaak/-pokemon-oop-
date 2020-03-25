@@ -1,0 +1,18 @@
+#container {
+    width: 70vw;
+    height: 90vh;
+    background-color: #ffffff;
+    margin: 0 auto;
+    font-size: large;
+    text-align: center;
+}
+
+#container a, #container a:hover, #container a:visited, #container a:active {
+    color: #000000;
+    text-decoration: none;
+    text-underline: none;
+}
+
+#txt {
+    margin-top: 10vh;
+}
