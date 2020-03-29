@@ -1,7 +1,7 @@
 <?php
 
 
-class attacks {
+class attack {
     //makes public variables
     public $attackname;
     public $damagevalue;
