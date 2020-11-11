@@ -7,6 +7,6 @@
 </head>
 <body>
 <div id="container">
-    <p id="txt"><a href="./scriptedSchoolBattle.php">Scripted battle for school</a> or you can choose to do a <a href="./customFights.php">custom fight</a></p>
+    <p id="txt"><a href="./scriptedSchoolBattle.php">Scripted battle for school</a></p>
 </div>
 </body>
