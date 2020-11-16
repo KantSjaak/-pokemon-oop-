@@ -3,7 +3,8 @@ require "./Classes/Pokemon.php";
 require "./Classes/Charmeleon.php";
 require "./Classes/Pickachu.php";
 require "./damageCalculator.php";
-require "./attack.php";
+require "./Classes/Attack.php";
+require "./Classes/Elements.php";
 
 //this starts it and makes the pokemon
 $Pokemon1 = new Pickachu("Pickachu");

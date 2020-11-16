@@ -5,25 +5,25 @@ class Pokemon {
     public static $pokemons = [];
 
     //makes variables
-    private $name;
-    private $hitpoints;
-    private $Attacks = array();
-    private $element;
-    private $weakness;
-    private $resistance;
-    private $dmgmultiplier;
-    private $wknsmultiplier;
+    private $_name;
+    private $_hitpoints;
+    private $_element;
+    private $_weakness;
+    private $_resistance;
+    private $_attacks = array();
+    private $_dmgmultiplier;
+    private $_wknsmultiplier;
 
     //sets the above variables when someone calls this class
-    public function __construct($name, $hitpoints, $element, $weakness, $resistance, $primaryatk, $secondaryatk, $dmgmultiplier, $wknsmultiplier){
-        $this->name = $name;
-        $this->hitpoints = $hitpoints;
-        $this->element = $element;
-        $this->weakness = $weakness;
-        $this->resistance = $resistance;
-        $this->Attacks = [$primaryatk, $secondaryatk];
-        $this->dmgmultiplier = $dmgmultiplier;
-        $this->wknsmultiplier = $wknsmultiplier;
+    public function __construct($_name, $_hitpoints, $_element, $_weakness, $_resistance, $primaryatk, $secondaryatk, $_dmgmultiplier, $_wknsmultiplier){
+        $this->name = $_name;
+        $this->hitpoints = $_hitpoints;
+        $this->element = $_element;
+        $this->weakness = $_weakness;
+        $this->resistance = $_resistance;
+        $this->attacks = [$primaryatk, $secondaryatk];
+        $this->dmgmultiplier = $_dmgmultiplier;
+        $this->wknsmultiplier = $_wknsmultiplier;
 
         //this one pushes newly created pokemon to the array
         array_push(self::$pokemons, $this);
@@ -62,8 +62,8 @@ class Pokemon {
     }
 
     public function setAttacks($index, $attackName, $attackDamage) {
-        $this->Attacks[$index]->setAttackName($attackName);
-        $this->Attacks[$index]->setAttackDamage($attackDamage);
+        $this->attacks[$index]->setAttackName($attackName);
+        $this->attacks[$index]->setAttackDamage($attackDamage);
         return;
     }
 
@@ -98,15 +98,15 @@ class Pokemon {
     }
 
     public function getAttackName($index) {
-        return $this->Attacks[$index]->getAttackName();
+        return $this->attacks[$index]->getAttackName();
     }
 
     public function getAttackDamage($index) {
-        return $this->Attacks[$index]->getAttackDamage();
+        return $this->attacks[$index]->getAttackDamage();
     }
 
     public function getAttacks() {
-        return $this->Attacks;
+        return $this->attacks;
     }
 
     public function getDamageValue() {
