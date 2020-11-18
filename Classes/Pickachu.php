@@ -17,6 +17,7 @@ class Pickachu extends Pokemon
         parent::__construct($name, $hitpoints, $element, $weakness, $resistance, $primaryatk, $secondaryatk, $dmgmultiplier, $wknsmultiplier);
     }
 
+    //Returns a little sentence about which pokemon and what the hp value is.
     public function returnHealth()
     {
         echo "Pickachu heeft " . $this->hitpoints . " hp over.";

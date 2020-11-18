@@ -5,7 +5,7 @@ abstract class Pokemon {
     //this one keeps track of alive pokemons
     public static $pokemons = [];
 
-    //makes variables
+    //makes variables that the pokemons need
     private $_name;
     private $_hitpoints;
     private $_element;
@@ -15,7 +15,10 @@ abstract class Pokemon {
     private $_dmgmultiplier;
     private $_wknsmultiplier;
 
-    //sets the above variables when someone calls this class
+    /*
+    * Sets the main element of the pokemon
+    * input string
+    */
     public function __construct($_name, $_hitpoints, $_element, $_weakness, $_resistance, $primaryatk, $secondaryatk, $_dmgmultiplier, $_wknsmultiplier){
         $this->name = $_name;
         $this->hitpoints = $_hitpoints;
@@ -30,6 +33,7 @@ abstract class Pokemon {
         array_push(self::$pokemons, $this);
     }
 
+    //this function will later echo the hp and the name of said pokemon
     abstract public function returnHealth ();
 
     public static function getPopulation(){
@@ -42,6 +46,12 @@ abstract class Pokemon {
         return $alive;
     }
 
+
+
+    /*
+    * calculates the remaining hp of the defending pokemon
+    * input var, integer
+    */
     public function takeDamage ($defender, $atk){
         if ($this->getElement() === $defender->getWeakness()){
             return $defender->getHealth() - ($this->getAttackDamage($atk) * $defender->getDamageValue());

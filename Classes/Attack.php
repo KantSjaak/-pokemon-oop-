@@ -13,21 +13,37 @@ class Attack {
         $this->damagevalue = $_damagevalue;
     }
 
-    /* Setters */
+
+    /*
+     * Sets the name of the attack
+     * input string
+     */
 
     public function setAttackName($name) {
         return $this->attackname = $name;
     }
 
+    /*
+     * Sets the damage of the attack
+     * input integer
+     */
+
+
     public function setAttackDamage($damage) {
         return $this->damagevalue = $damage;
     }
 
-    /* Getters */
+    /*
+     * Gets the damage of the attack
+     */
 
     public function getAttackName() {
         return $this->attackname;
     }
+
+    /*
+     * Gets the damage of the attack
+     */
 
     public function getAttackDamage() {
         return $this->damagevalue;
