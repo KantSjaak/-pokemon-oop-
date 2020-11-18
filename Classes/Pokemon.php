@@ -1,6 +1,7 @@
 <?php
+namespace Classes;
 
-class Pokemon {
+abstract class Pokemon {
     //this one keeps track of alive pokemons
     public static $pokemons = [];
 
@@ -29,6 +30,8 @@ class Pokemon {
         array_push(self::$pokemons, $this);
     }
 
+    abstract public function returnHealth ();
+
     public static function getPopulation(){
         $alive = [];
         foreach (self::$pokemons as $pokemon) {
@@ -37,6 +40,16 @@ class Pokemon {
             }
         }
         return $alive;
+    }
+
+    public function takeDamage ($defender, $atk){
+        if ($this->getElement() === $defender->getWeakness()){
+            return $defender->getHealth() - ($this->getAttackDamage($atk) * $defender->getDamageValue());
+        }elseif ($this->getElement() === $defender->getResistance()){
+            return $defender->getHealth() - ($this->getAttackDamage($atk) - $defender->getWeaknessValue());
+        }else{
+            return $defender->getHealth() - $this->getAttackDamage($atk);
+        }
     }
 
     /* Setters */
@@ -49,16 +62,16 @@ class Pokemon {
         return $this->hitpoints = $hitpoints;
     }
 
-    public function setElement($element) {
-        return $this->element = $element;
+    public function v1setElement($element) {
+        return $this->setElement($element);
     }
 
     public function setWeakness($weakness) {
-        return $this->weakness = $weakness;
+        return $this->setWeakness($weakness);
     }
 
     public function setResistance($resistance) {
-        return $this->resistance = $resistance;
+        return $this->setResistance($resistance);
     }
 
     public function setAttacks($index, $attackName, $attackDamage) {

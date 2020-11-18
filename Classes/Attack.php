@@ -1,16 +1,16 @@
 <?php
-
+namespace Classes;
 
 class Attack {
     //makes variables
-    private $attackname;
-    private $damagevalue;
+    private $_attackname;
+    private $_damagevalue;
 
 
     //sets the above variables when someone calls this class
-    public function __construct($attackname, $damagevalue){
-        $this->attackname = $attackname;
-        $this->damagevalue = $damagevalue;
+    public function __construct($_attackname, $_damagevalue){
+        $this->attackname = $_attackname;
+        $this->damagevalue = $_damagevalue;
     }
 
     /* Setters */

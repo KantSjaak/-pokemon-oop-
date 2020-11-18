@@ -1,4 +1,6 @@
 <?php
+namespace Classes;
+
 class Elements {
     //makes variables
     private $_element;
@@ -19,7 +21,7 @@ class Elements {
         return $this->element = $element;
     }
 
-    public function setweakness($weakness) {
+    public function setWeakness($weakness) {
         return $this->weakness = $weakness;
     }
 

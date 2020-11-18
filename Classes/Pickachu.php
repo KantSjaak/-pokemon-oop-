@@ -1,4 +1,5 @@
 <?php
+namespace Classes;
 
 class Pickachu extends Pokemon
 {
@@ -14,5 +15,10 @@ class Pickachu extends Pokemon
         $dmgmultiplier = 1.5;
         $wknsmultiplier = 20;
         parent::__construct($name, $hitpoints, $element, $weakness, $resistance, $primaryatk, $secondaryatk, $dmgmultiplier, $wknsmultiplier);
+    }
+
+    public function returnHealth()
+    {
+        echo "Pickachu heeft " . $this->hitpoints . " hp over.";
     }
 }

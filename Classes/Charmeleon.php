@@ -1,4 +1,5 @@
 <?php
+namespace Classes;
 
 class Charmeleon extends Pokemon
 {
@@ -14,5 +15,10 @@ class Charmeleon extends Pokemon
         $dmgmultiplier = 2;
         $wknsmultiplier = 10;
         parent::__construct($name, $hitpoints, $element, $weakness, $resistance, $primaryatk, $secondaryatk, $dmgmultiplier, $wknsmultiplier);
+    }
+
+    public function returnHealth()
+    {
+        echo "Charmeleon heeft " . $this->hitpoints . " hp over.";
     }
 }

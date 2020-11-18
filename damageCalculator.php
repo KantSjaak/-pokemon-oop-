@@ -1,4 +1,5 @@
 <?php
+//move to pokemon class
 function damageCalc ($attacker, $defender, $atk){
     if ($attacker->getElement() === $defender->getWeakness()){
         return $defender->getHealth() - ($attacker->getAttackDamage($atk) * $defender->getDamageValue());
