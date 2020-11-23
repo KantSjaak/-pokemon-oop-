@@ -46,12 +46,13 @@ abstract class Pokemon {
         return $alive;
     }
 
-
-
-    /*
-    * calculates the remaining hp of the defending pokemon
-    * input var, integer
-    */
+    /**
+     * Calculates the remaining hp of the defending pokemon
+     *
+     * @param $defender Pokemon defending pokemon
+     * @param $atk int attack power
+     * @return int
+     */
     public function takeDamage ($defender, $atk){
         if ($this->getElement() === $defender->getWeakness()){
             return $defender->getHealth() - ($this->getAttackDamage($atk) * $defender->getDamageValue());
@@ -72,16 +73,16 @@ abstract class Pokemon {
         return $this->hitpoints = $hitpoints;
     }
 
-    public function v1setElement($element) {
-        return $this->setElement($element);
+    public function setElement($element) {
+        return $this->element = $element;
     }
 
     public function setWeakness($weakness) {
-        return $this->setWeakness($weakness);
+        return $this->weakness = $weakness;
     }
 
     public function setResistance($resistance) {
-        return $this->setResistance($resistance);
+        return $this->resistance = $resistance;
     }
 
     public function setAttacks($index, $attackName, $attackDamage) {
